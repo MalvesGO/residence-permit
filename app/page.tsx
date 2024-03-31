@@ -6,13 +6,14 @@ import { InputText } from "@ama-pt/agora-design-system";
 
 export default function Home() {
   const [name, setName] = useState("");
+  const [photo, setPhoto] = useState("");
 
   return (
-    <div className="flex gap-8 p-8">
-      <div>
-        <Cartao name={name} />
+    <div className="flex gap-8">
+      <div className="card-data w-full">
+        <Cartao name={name} photo={photo} />
       </div>
-      <form>
+      <div className="card-info w-full">
         <div className="p-16">
           <InputText
             label="Nome"
@@ -22,7 +23,16 @@ export default function Home() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-      </form>
+        <div className="p-16">
+          <InputText
+            label="Foto"
+            type="text"
+            placeholder="sua foto de perfil"
+            value={photo}
+            onChange={(e) => setPhoto(e.target.value)}
+          />
+        </div>
+      </div>
     </div>
   );
 }

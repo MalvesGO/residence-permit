@@ -4,16 +4,25 @@ import ResidenceVerso from "../../public/verso.png";
 import "./cartao.scss";
 
 interface CartaoProps {
+  /**
+   * The name of the person
+   */
   name: string;
+    /**
+     * The photo of the person
+     */
+  photo: string;
 }
 
-export default function Cartao({ name }: CartaoProps) {
+export default function Cartao({ name, photo }: CartaoProps) {
   return (
     <div className="cartao">
-      <img
-        src="https://avatars.githubusercontent.com/u/10326782?v=4"
-        alt=""
+      <Image
+        src={photo || "https://via.placeholder.com/150"}
+        alt="card image photo"
         className="photo"
+        width={150}
+        height={150}
       />
       <span className="name">{name}</span>
       <Image
