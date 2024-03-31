@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Cartao from "@/components/Cartao/Cartao";
+import { InputText } from "@ama-pt/agora-design-system";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -12,12 +13,15 @@ export default function Home() {
         <Cartao name={name} />
       </div>
       <form>
-        <input
-          type="text"
-          placeholder="Your name here"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <div className="p-16">
+          <InputText
+            label="Nome"
+            type="text"
+            placeholder="Seu nome e sobrenome"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
       </form>
     </div>
   );
