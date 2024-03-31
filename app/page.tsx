@@ -7,7 +7,7 @@ export default function Home() {
   const [name, setName] = useState("");
 
   return (
-    <div className="flex gap-32 p-32">
+    <div className="flex gap-8 p-8">
       <div>
         <Cartao name={name} />
       </div>
